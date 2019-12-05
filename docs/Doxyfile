@@ -1,0 +1,35 @@
+#
+# @file Doxyfile.in
+# @author Maximilien Naveau (maximilien.naveau@gmail.com)
+# @copyright Copyright (c) 2019, New York University and Max Planck Gesellschaft.
+# @license License BSD-3 clause
+# @date 2019-05-06
+# 
+# @brief see doxygen.cmake for details.
+# 
+
+PROJECT_NAME           = "sphinx_tuto"
+OUTPUT_DIRECTORY       = doc
+JAVADOC_AUTOBRIEF      = YES
+TAB_SIZE               = 4
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+EXAMPLE_PATH           = ../../../demos
+INPUT                  = ../../..
+IMAGE_PATH             = ../../..
+FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx *.md
+EXCLUDE_PATTERNS       = */*deprecated*/*
+EXCLUDE_PATTERNS      += */*build*/*
+EXCLUDE_PATTERNS      += */tests/*
+RECURSIVE              = YES
+GENERATE_LATEX         = No
+GENERATE_TAGFILE       = sphinx_tuto.tag
+GENERATE_TREEVIEW = No
+GENERATE_HTML = No
+GENERATE_XML = YES
+ALIASES += imageSize{3}="\htmlonly <style> div.image img[src=\"\1\"]{\2} </style> \endhtmlonly \image html \1 \"\3\""
+
+# TODO manage this tag file with the cmake macro:
+# e.g. "@CMAKE_INSTALL_PREFIX@/share/doc/@DEPENDENCY_PROJECT@.doxytag = @CMAKE_INSTALL_PREFIX@/share/doc/@DEPENDENCY_PROJECT_NAME"
+# TAGFILES =  @sphinx_tuto_TAGFILES@
