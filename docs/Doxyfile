@@ -9,7 +9,7 @@
 # 
 
 PROJECT_NAME           = "sphinx_tuto"
-OUTPUT_DIRECTORY       = doc
+OUTPUT_DIRECTORY       = doxyoutput
 JAVADOC_AUTOBRIEF      = YES
 TAB_SIZE               = 4
 EXTRACT_ALL            = NO
@@ -18,7 +18,7 @@ EXTRACT_STATIC         = YES
 EXAMPLE_PATH           = ../../../demos
 INPUT                  = ../../..
 IMAGE_PATH             = ../../..
-FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx *.md
+FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx
 EXCLUDE_PATTERNS       = */*deprecated*/*
 EXCLUDE_PATTERNS      += */*build*/*
 EXCLUDE_PATTERNS      += */tests/*

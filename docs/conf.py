@@ -61,7 +61,7 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -172,7 +172,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx_tuto', u'sphinx_tuto Documentation',
+    (master_doc, 'sphinx_tuto', u'sphinx_tuto C++',
      author, 'sphinx_tuto', 'One line description of project.',
      'Robotics'),
 ]
@@ -237,7 +237,7 @@ exhale_args = {
     # "treeViewIsBootstrap": True,
     "exhaleExecutesDoxygen": True,
     "exhaleUseDoxyfile":     True,
-    "rootFileTitle":         project + ' documentation',
+    "rootFileTitle":         project + ' C++',
     "afterTitleDescription": textwrap.dedent('''
        .. note:: The following documentation presents the package API.
     '''),
