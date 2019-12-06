@@ -1,7 +1,7 @@
-#include "ci_example_cpp/rosparameters_configuration.hpp"
+#include "shpinx_tuto/rosparameters_configuration.hpp"
 
 
-namespace ci_example_cpp {
+namespace shpinx_tuto {
 
   static bool get_parameter(const ros::NodeHandle &nh, const std::string &parameter, double &get_value){
     ros::Rate wait(10);

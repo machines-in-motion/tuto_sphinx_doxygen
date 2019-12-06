@@ -1,7 +1,7 @@
-#include "ci_example_cpp/default_configuration.hpp"
+#include "shpinx_tuto/default_configuration.hpp"
 
 
-namespace ci_example_cpp {
+namespace shpinx_tuto {
 
 
   double Default_configuration::get_kp() const {

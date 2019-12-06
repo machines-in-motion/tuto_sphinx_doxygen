@@ -1,7 +1,7 @@
-#include "ci_example_cpp/gains_configuration.hpp"
+#include "shpinx_tuto/gains_configuration.hpp"
 
 
-namespace ci_example_cpp {
+namespace shpinx_tuto {
 
   
   void print_configuration(const Gains_configuration& configuration){

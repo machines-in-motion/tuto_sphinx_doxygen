@@ -6,7 +6,7 @@
  * @date 2019-05-22
  */
 
-#include "ci_example_cpp/basic_pid.hpp" // where DEFAULT_KP,KD and KI are declared
+#include "shpinx_tuto/basic_pid.hpp" // where DEFAULT_KP,KD and KI are declared
 
 
 // you may notice that there is no doxygen friendly documentation here.
@@ -18,7 +18,7 @@
 // In any case the internal variable must be followed by a trailing underscore
 
 
-namespace ci_example_cpp {
+namespace shpinx_tuto {
 
 
 

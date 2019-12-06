@@ -14,9 +14,7 @@
 #
 import os
 import sys
-#! CMAKE
 sys.path.insert(0, os.path.abspath('../../../python/'))
-sys.path.insert(0, os.path.abspath('/home/mnaveau/Software/install/share/doxyrest/sphinx/'))
 import textwrap
 
 
@@ -48,8 +46,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     # doxygen compatibility
-    'doxyrest',
-    'cpplexer',
+    'breathe',
+    'exhale',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -77,12 +75,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
-
-# If you used INTRO_FILE in 'doxyrest-config.lua' to force-include it
-# into 'index.rst', exclude it from the Sphinx input (otherwise, there
-# will be build warnings):
-exclude_patterns += ['page_index.rst']
+exclude_patterns = ['*dir_*', '*file_*']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None

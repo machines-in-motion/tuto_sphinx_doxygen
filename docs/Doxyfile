@@ -9,12 +9,30 @@
 # 
 
 PROJECT_NAME           = "sphinx_tuto"
+
+# Next, choose the location of the resulting XML database:
 OUTPUT_DIRECTORY       = doxyoutput
+
+# Program listing vastly increases the size of XML so it's recommended
+# to turning it OFF:
+XML_PROGRAMLISTING = NO
+
+# The next one is essential! Sphinx uses lowercase reference IDs,
+# so Doxygen can't use mixed-case IDs:
+CASE_SENSE_NAMES = NO
+
+# The next one is important for C++ projects -- otherwise Doxygen
+# may generate lots of bogus links to template arguments:
+HIDE_UNDOC_RELATIONS = YES
+
 JAVADOC_AUTOBRIEF      = YES
 TAB_SIZE               = 4
-EXTRACT_ALL            = NO
-EXTRACT_PRIVATE        = NO
+
+# Extract as much as we can
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
 EXTRACT_STATIC         = YES
+
 EXAMPLE_PATH           = ../../../demos
 INPUT                  = ../../..
 IMAGE_PATH             = ../../..

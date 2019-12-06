@@ -1,6 +1,6 @@
-#include "ci_example_cpp/pid.hpp"
+#include "shpinx_tuto/pid.hpp"
 
-namespace ci_example_cpp {
+namespace shpinx_tuto {
 
   PID::PID()
     : integral_(0) {

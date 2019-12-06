@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ci_example_cpp/gains_configuration.hpp"
+#include "sphinx_tuto/gains_configuration.hpp"
 #include "ros/ros.h"
 #include "ros/master.h"
 
@@ -11,7 +11,7 @@
 
 
 
-namespace ci_example_cpp {
+namespace sphinx_tuto {
 
 
   /*! @brief Read gains configuration from the ros parameter server. */

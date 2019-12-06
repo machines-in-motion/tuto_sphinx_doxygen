@@ -1,7 +1,7 @@
-#include "ci_example_cpp/file_configuration.hpp"
+#include "shpinx_tuto/file_configuration.hpp"
 
 
-namespace ci_example_cpp {
+namespace shpinx_tuto {
 
   File_configuration::File_configuration(std::string yaml_file){
 

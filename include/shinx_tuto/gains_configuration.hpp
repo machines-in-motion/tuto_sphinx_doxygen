@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-namespace ci_example_cpp {
+namespace sphinx_tuto {
 
   /** @brief Abstract class defining for the PID configuration.
    * 

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "ci_example_cpp/default_configuration.hpp"
+#include "sphinx_tuto/default_configuration.hpp"
 #include <memory>
 #include <vector>
 
-namespace ci_example_cpp {
+namespace sphinx_tuto {
 
 
   /*! @brief Simple 1D pid controller. */

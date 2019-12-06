@@ -8,12 +8,26 @@ Welcome to sphinx_tuto's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Table of Content: C++ API
 
    api/library_root
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Table of Content: Python Package
+
    modules
 
-Indices and tables
+.. toctree::
+   :maxdepth: 2
+   :caption: Additionnal Documentation:
+
+   doc/cpp_coding_guidelines.md
+   doc/general_rules.md
+   doc/parse_markdown.md
+   doc/python_code_guidelines.md
+
+Indices and Tables
 ==================
 
 * :ref:`genindex`
