@@ -30,8 +30,7 @@
 --!
 
 --! CMAKE
-FRAME_DIR_LIST = { "/home/mnaveau/Software/install/share/cfamily",
-                   "/home/mnaveau/Software/install/share/common" }
+FRAME_DIR_LIST = { "/home/mnaveau/Software/install/share/cfamily", "/home/mnaveau/Software/install/share/common" }
 
 --!
 --! The output master (index) reStructuredText file. Usually, the index frame
@@ -42,7 +41,7 @@ FRAME_DIR_LIST = { "/home/mnaveau/Software/install/share/cfamily",
 --!
 
 --! CMAKE
-FRAME_FILE = "index.rst.in"
+FRAME_FILE = "index_main.rst.in"
 
 --!
 --! The input master (index) XML file. Specifying it here allows calling
@@ -52,7 +51,7 @@ FRAME_FILE = "index.rst.in"
 --!
 
 --! CMAKE
-INPUT_FILE = "xml-dir/index.xml"
+INPUT_FILE = "doxyoutput/xml/index.xml"
 
 --!
 --! The output master (index) reStructuredText file. Usually, the index frame
@@ -63,7 +62,7 @@ INPUT_FILE = "xml-dir/index.xml"
 --!
 
 --! CMAKE
-OUTPUT_FILE = "rst-dir/index.rst"
+OUTPUT_FILE = "doxyrest_out/doxyrest_index.rst"
 
 --!
 --! File with project-specific reStructuredText definitions. When non``nil``,

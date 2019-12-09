@@ -28,7 +28,7 @@ help:
 	cd $(SOURCEDIR) ; $(DOXYGEN) Doxyfile ; cd -
 
 	# Generate the .rst from the Dpxygen (xml) symbols
-	$(DOXYREST) -c doxyrest-config.lua
+	cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/doxyrest_index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
 
 	# Generate the python API .rst files
 	$(SPHINX_APIDOC) -o $(SOURCEDIR) python/sphinx_tuto

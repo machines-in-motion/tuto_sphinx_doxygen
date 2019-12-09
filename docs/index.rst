@@ -10,13 +10,13 @@ Welcome to sphinx_tuto's documentation!
    :maxdepth: 2
    :caption: Table of Content: C++ API
 
-   api/library_root
+   doxyrest_out/doxyrest_index
 
 .. toctree::
    :maxdepth: 2
    :caption: Table of Content: Python Package
 
-   modules
+   sphinx_tuto
 
 .. toctree::
    :maxdepth: 2
