@@ -16,7 +16,7 @@ import os
 import sys
 #! CMAKE
 sys.path.insert(0, os.path.abspath('../../../python/'))
-sys.path.insert(0, os.path.abspath('/home/mnaveau/Software/install/share/doxyrest/sphinx/'))
+# sys.path.insert(0, os.path.abspath('/home/mnaveau/Software/install/share/doxyrest/sphinx/'))
 import textwrap
 
 
@@ -48,21 +48,27 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     # doxygen compatibility
-    'doxyrest',
-    'cpplexer',
+    # 'doxyrest',
+    # 'cpplexer',
+    'breathe',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # Parse markdown properly.
-from recommonmark.parser import CommonMarkParser
-source_parsers = {
-    '.md': CommonMarkParser,
-}
+# from recommonmark.parser import CommonMarkParser
+# source_parsers = {
+#     '.md': CommonMarkParser,
+# }
+
+# breath extension management
+breathe_projects = { project: "doxyoutput/xml" }
+breathe_default_project = project
+
 
 # The suffix(es) of source filenames.
-source_suffix = ['.rst', '.md']
+source_suffix = ['.rst']
 
 # The master toctree document.
 master_doc = 'index'

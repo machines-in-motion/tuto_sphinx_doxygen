@@ -62,7 +62,7 @@ INPUT_FILE = "doxyoutput/xml/index.xml"
 --!
 
 --! CMAKE
-OUTPUT_FILE = "doxyrest_out/doxyrest_index.rst"
+OUTPUT_FILE = "doxyrest_out/index.rst"
 
 --!
 --! File with project-specific reStructuredText definitions. When non``nil``,

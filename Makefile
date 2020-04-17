@@ -21,14 +21,14 @@ help:
 %: Makefile
 	# Create the build folder if it does not exists.
 	mkdir -p $(BUILDDIR)
-	# Configure/copy the docs paramters
+	# Configure/copy the docs parameters
 	cp -fr docs $(BUILDDIR)
 
 	# Generate the doxygen (xml) symbols
 	cd $(SOURCEDIR) ; $(DOXYGEN) Doxyfile ; cd -
 
 	# Generate the .rst from the Dpxygen (xml) symbols
-	cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/doxyrest_index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
+	# cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
 
 	# Generate the python API .rst files
 	$(SPHINX_APIDOC) -o $(SOURCEDIR) python/sphinx_tuto
