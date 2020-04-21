@@ -2,23 +2,24 @@
 #
 
 # You can set these variables from the command line.
-SOURCEDIR      = build/sphinx_tuto/docs
-BUILDDIR       = build/sphinx_tuto/
+DOC_BUILD_DIR        = build/docs
 
-DOXYGEN        = doxygen
-BREATHE_APIDOC = breathe-apidoc
-BREATHE_IN     = $(SOURCEDIR)/doxyoutput/xml/
-BREATHE_OUT    = -o $(SOURCEDIR)/breath
-BREATHE_OPTION = -g union,namespace,class,group,struct,file,interface
-DOXYREST       = doxyrest
-SPHINXOPTS     =
-SPHINX_APIDOC  = sphinx-apidoc
-SPHINXBUILD    = sphinx-build
+DOXYGEN         = doxygen
+BREATHE_APIDOC  = breathe-apidoc
+BREATHE_IN      = $(DOC_BUILD_DIR)/doxygen/xml
+BREATHE_OUT     = -o $(DOC_BUILD_DIR)/breath
+BREATHE_OPTION  = -g union,namespace,class,group,struct,file,interface
+DOXYREST        = doxyrest
+SPHINXOPTS      =
+SPHINX_APIDOC   = sphinx-apidoc
+SPHINX_BUILD    = sphinx-build
+SPHINX_BUILD_IN = $(DOC_BUILD_DIR)
+SPHINX_BUILD_OUT = $(DOC_BUILD_DIR)/sphinx
 
 
 # Put it first so that "make" without argument is like "make help".
 help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINX_BUILD) -M help "$(SPHINX_BUILD_IN)" "$(DOC_BUILD_DIR)" $(SPHINXOPTS) $(O)
 
 .PHONY: help Makefile
 
@@ -26,12 +27,10 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	# Create the build folder if it does not exists.
-	mkdir -p $(BUILDDIR)
-	# Configure/copy the docs parameters
-	cp -fr docs $(BUILDDIR)
+	mkdir -p $(DOC_BUILD_DIR)
 
 	# Generate the doxygen (xml) symbols
-	cd $(SOURCEDIR) ; $(DOXYGEN) Doxyfile ; cd -
+	$(DOXYGEN) docs/Doxyfile
 
 	# Generate the .rst from the Dpxygen (xml) symbols
 	# cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
@@ -40,7 +39,10 @@ help:
 	$(BREATHE_APIDOC) $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION) 
 
 	# Generate the python API .rst files
-	$(SPHINX_APIDOC) -o $(SOURCEDIR) python/sphinx_tuto
+	$(SPHINX_APIDOC) -o $(DOC_BUILD_DIR) python/sphinx_tuto
 	
+	# Copy the config files
+	cp -r docs/* $(DOC_BUILD_DIR)
+
 	# Generate the final layout.
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	@$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O)

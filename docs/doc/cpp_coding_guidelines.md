@@ -74,7 +74,10 @@ should be called `velocity_krpm` instead of `just velocity`. Some more examples:
 
 - duration_us (use "u" instead of "µ")
 - voltage_mV
-- acceleration_mps2 (\f$ \frac{m}{s^2} \f$)
+- acceleration_mps2, i.e.
+    ```math
+        \frac{m}{s^2}
+    ```
 
 ## V. C/C++ Formatting
 

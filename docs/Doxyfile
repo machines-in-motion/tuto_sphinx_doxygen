@@ -11,7 +11,7 @@
 PROJECT_NAME           = "sphinx_tuto"
 
 # Next, choose the location of the resulting XML database:
-OUTPUT_DIRECTORY       = doxyoutput
+OUTPUT_DIRECTORY       = build/docs/doxygen
 
 # Program listing vastly increases the size of XML so it's recommended
 # to turning it OFF:
@@ -33,16 +33,16 @@ EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = YES
 EXTRACT_STATIC         = YES
 
-EXAMPLE_PATH           = ../../../demos
-INPUT                  = ../../..
-IMAGE_PATH             = ../../..
-FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx #*.md
+EXAMPLE_PATH           = demos
+INPUT                  = .
+IMAGE_PATH             = .
+FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx
 EXCLUDE_PATTERNS       = */*deprecated*/*
 EXCLUDE_PATTERNS      += */*build*/*
 EXCLUDE_PATTERNS      += */tests/*
 RECURSIVE              = YES
 GENERATE_LATEX         = No
-GENERATE_TAGFILE       = sphinx_tuto.tag
+GENERATE_TAGFILE       = build/docs/doxygen/sphinx_tuto.tag
 GENERATE_TREEVIEW = No
 GENERATE_HTML = No
 GENERATE_XML = YES

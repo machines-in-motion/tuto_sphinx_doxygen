@@ -15,9 +15,14 @@
 import os
 import sys
 #! CMAKE
-sys.path.insert(0, os.path.abspath('../../../python/'))
+sys.path.insert(0, os.path.abspath('python/'))
 # sys.path.insert(0, os.path.abspath('/home/mnaveau/Software/install/share/doxyrest/sphinx/'))
 import textwrap
+
+# AutoStructify for math in markdown
+import recommonmark 
+from recommonmark.transform import AutoStructify
+
 
 
 # -- Project information -----------------------------------------------------
@@ -43,7 +48,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
-    'sphinx.ext.mathjax',
+    'sphinx.ext.mathjax', # doxygen math in doc
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
@@ -51,20 +56,14 @@ extensions = [
     # doxygen compatibility
     # 'doxyrest',
     # 'cpplexer',
-    'breathe',
+    'breathe', # to define the C++ api with breathe-apidoc
 ]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
-# Parse markdown properly.
-# from recommonmark.parser import CommonMarkParser
-# source_parsers = {
-#     '.md': CommonMarkParser,
-# }
-
 # breath extension management
-breathe_projects = { project: "doxyoutput/xml" }
+breathe_projects = { project: "doxygen/xml" }
 breathe_default_project = project
 
 
@@ -222,3 +221,11 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# some tools for markdown parsing
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'auto_toc_tree_section': 'Contents',
+            'enable_math':True,
+            }, True)
+    app.add_transform(AutoStructify)
