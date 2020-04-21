@@ -227,5 +227,7 @@ def setup(app):
     app.add_config_value('recommonmark_config', {
             'auto_toc_tree_section': 'Contents',
             'enable_math':True,
+            'enable_inline_math':True,
+            'enable_eval_rst':True,
             }, True)
     app.add_transform(AutoStructify)
