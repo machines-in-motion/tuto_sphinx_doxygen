@@ -65,7 +65,7 @@ templates_path = ['_templates']
 # breath extension management
 breathe_projects = { project: "doxygen/xml" }
 breathe_default_project = project
-
+breathe_default_members = ('members', 'private-members', 'undoc-members')
 
 # The suffix(es) of source filenames.
 source_suffix = ['.rst', '.md']
