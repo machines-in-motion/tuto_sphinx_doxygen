@@ -13,6 +13,11 @@ Welcome to sphinx_tuto's documentation!
 
    sphinx_tuto
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Table of Content: Additionnal documentation
+
+   additionnal_doc
 
 Indices and Tables
 ==================

@@ -2,13 +2,19 @@
 #
 
 # You can set these variables from the command line.
-DOXYGEN       = doxygen
-DOXYREST      = doxyrest
-SPHINXOPTS    =
-SPHINX_APIDOC = sphinx-apidoc
-SPHINXBUILD   = sphinx-build
-SOURCEDIR     = build/sphinx_tuto/docs
-BUILDDIR      = build/sphinx_tuto/
+SOURCEDIR      = build/sphinx_tuto/docs
+BUILDDIR       = build/sphinx_tuto/
+
+DOXYGEN        = doxygen
+BREATHE_APIDOC = breathe-apidoc
+BREATHE_IN     = $(SOURCEDIR)/doxyoutput/xml/
+BREATHE_OUT    = -o $(SOURCEDIR)/breath
+BREATHE_OPTION = -g union,namespace,class,group,struct,file,interface
+DOXYREST       = doxyrest
+SPHINXOPTS     =
+SPHINX_APIDOC  = sphinx-apidoc
+SPHINXBUILD    = sphinx-build
+
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -29,6 +35,9 @@ help:
 
 	# Generate the .rst from the Dpxygen (xml) symbols
 	# cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
+
+	# Generate the .rst files from the doxygen xml output
+	$(BREATHE_APIDOC) $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION) 
 
 	# Generate the python API .rst files
 	$(SPHINX_APIDOC) -o $(SOURCEDIR) python/sphinx_tuto

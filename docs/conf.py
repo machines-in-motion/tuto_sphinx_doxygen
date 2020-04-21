@@ -47,6 +47,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
+    'recommonmark', # markdown support
     # doxygen compatibility
     # 'doxyrest',
     # 'cpplexer',
@@ -68,7 +69,7 @@ breathe_default_project = project
 
 
 # The suffix(es) of source filenames.
-source_suffix = ['.rst']
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
