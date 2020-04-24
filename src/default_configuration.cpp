@@ -1,7 +1,7 @@
-#include "shpinx_tuto/default_configuration.hpp"
+#include "sphinx_tuto/default_configuration.hpp"
 
 
-namespace shpinx_tuto {
+namespace sphinx_tuto {
 
 
   double Default_configuration::get_kp() const {

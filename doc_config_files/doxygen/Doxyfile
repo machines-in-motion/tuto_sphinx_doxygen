@@ -1,17 +1,11 @@
 #
-# @file Doxyfile.in
-# @author Maximilien Naveau (maximilien.naveau@gmail.com)
-# @copyright Copyright (c) 2019, New York University and Max Planck Gesellschaft.
-# @license License BSD-3 clause
-# @date 2019-05-06
-# 
-# @brief see doxygen.cmake for details.
+# Doxyfile for the Makefile
 # 
 
 PROJECT_NAME           = "sphinx_tuto"
 
 # Next, choose the location of the resulting XML database:
-OUTPUT_DIRECTORY       = build/docs/doxygen
+OUTPUT_DIRECTORY       = _build/docs/doxygen
 
 # Program listing vastly increases the size of XML so it's recommended
 # to turning it OFF:
@@ -43,11 +37,7 @@ EXCLUDE_PATTERNS      += */tests/*
 RECURSIVE              = YES
 GENERATE_LATEX         = No
 GENERATE_TAGFILE       = build/docs/doxygen/sphinx_tuto.tag
-GENERATE_TREEVIEW = No
+GENERATE_TREEVIEW = YES
 GENERATE_HTML = No
 GENERATE_XML = YES
 ALIASES += imageSize{3}="\htmlonly <style> div.image img[src=\"\1\"]{\2} </style> \endhtmlonly \image html \1 \"\3\""
-
-# TODO manage this tag file with the cmake macro:
-# e.g. "@CMAKE_INSTALL_PREFIX@/share/doc/@DEPENDENCY_PROJECT@.doxytag = @CMAKE_INSTALL_PREFIX@/share/doc/@DEPENDENCY_PROJECT_NAME"
-# TAGFILES =  @sphinx_tuto_TAGFILES@

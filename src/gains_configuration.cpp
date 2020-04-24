@@ -1,7 +1,7 @@
-#include "shpinx_tuto/gains_configuration.hpp"
+#include "sphinx_tuto/gains_configuration.hpp"
 
 
-namespace shpinx_tuto {
+namespace sphinx_tuto {
 
   
   void print_configuration(const Gains_configuration& configuration){

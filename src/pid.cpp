@@ -1,6 +1,6 @@
-#include "shpinx_tuto/pid.hpp"
+#include "sphinx_tuto/pid.hpp"
 
-namespace shpinx_tuto {
+namespace sphinx_tuto {
 
   PID::PID()
     : integral_(0) {

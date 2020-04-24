@@ -15,8 +15,8 @@
 import os
 import sys
 #! CMAKE
-sys.path.insert(0, os.path.abspath('python/'))
-# sys.path.insert(0, os.path.abspath('/home/mnaveau/Software/install/share/doxyrest/sphinx/'))
+sys.path.insert(0, os.path.abspath(@PROJECT_SOURCE_DIR@/python))
+sys.path.insert(0, os.path.abspath(@PROJECT_SOURCE_DIR@/doc))
 import textwrap
 
 # AutoStructify for math in markdown
@@ -166,7 +166,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'sphinx_tuto.tex', u'sphinx\\_tuto Documentation',
-     u'Maximilien Naveau', 'manual'),
+     author, 'manual'),
 ]
 
 

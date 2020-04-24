@@ -1,7 +1,7 @@
-#include "shpinx_tuto/file_configuration.hpp"
+#include "sphinx_tuto/file_configuration.hpp"
 
 
-namespace shpinx_tuto {
+namespace sphinx_tuto {
 
   File_configuration::File_configuration(std::string yaml_file){
 

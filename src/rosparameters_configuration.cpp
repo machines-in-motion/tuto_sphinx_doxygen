@@ -1,7 +1,7 @@
-#include "shpinx_tuto/rosparameters_configuration.hpp"
+#include "sphinx_tuto/rosparameters_configuration.hpp"
 
 
-namespace shpinx_tuto {
+namespace sphinx_tuto {
 
   static bool get_parameter(const ros::NodeHandle &nh, const std::string &parameter, double &get_value){
     ros::Rate wait(10);
