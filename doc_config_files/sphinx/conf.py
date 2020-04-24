@@ -15,14 +15,15 @@
 import os
 import sys
 #! CMAKE
-sys.path.insert(0, os.path.abspath(@PROJECT_SOURCE_DIR@/python))
-sys.path.insert(0, os.path.abspath(@PROJECT_SOURCE_DIR@/doc))
+sys.path.insert(0, os.path.abspath("../../../python"))
 import textwrap
 
 # AutoStructify for math in markdown
 import recommonmark 
 from recommonmark.transform import AutoStructify
 
+# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 
 # -- Project information -----------------------------------------------------
@@ -63,7 +64,7 @@ extensions = [
 templates_path = ['_templates']
 
 # breath extension management
-breathe_projects = { project: "doxygen/xml" }
+breathe_projects = { project: "../doxygen/xml" }
 breathe_default_project = project
 breathe_default_members = ('members', 'private-members', 'undoc-members')
 
@@ -85,11 +86,6 @@ language = None
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
 
-# If you used INTRO_FILE in 'doxyrest-config.lua' to force-include it
-# into 'index.rst', exclude it from the Sphinx input (otherwise, there
-# will be build warnings):
-exclude_patterns += ['page_index.rst']
-
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
@@ -98,17 +94,6 @@ pygments_style = None
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
-# on_rtd is whether we are on readthedocs.org, this line of code grabbed from docs.readthedocs.org
-# on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-
-# if not on_rtd:  # only import and set the theme if we're building docs locally
-#     import sphinx_rtd_theme
-#     html_theme = 'sphinx_rtd_theme'
-#     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-# else:
-#     html_theme = 'classic'
-
 import sphinx_rtd_theme
 html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]

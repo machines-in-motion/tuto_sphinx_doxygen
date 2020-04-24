@@ -8,10 +8,10 @@ Welcome to sphinx_tuto's documentation!
    doxygen_index
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Table of Content: Python API
 
-   sphinx_tuto
+   modules
 
 .. toctree::
    :maxdepth: 2

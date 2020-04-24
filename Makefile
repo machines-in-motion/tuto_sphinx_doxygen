@@ -4,18 +4,28 @@
 # You can set these variables from the command line.
 DOC_BUILD_DIR        = _build/docs
 
+# Doxygen
 DOXYGEN         = doxygen
-BREATHE_APIDOC  = breathe-apidoc
-BREATHE_IN      = $(DOC_BUILD_DIR)/doxygen/xml
-BREATHE_OUT     = $(DOC_BUILD_DIR)/breath
-BREATHE_OPTION  = -g union,namespace,class,group,struct,file,interface
+
+# Doxyrest
 # DOXYREST        = doxyrest
+
+# Sphinx
 SPHINXOPTS      =
 SPHINX_APIDOC   = sphinx-apidoc
 SPHINX_BUILD    = sphinx-build
-SPHINX_BUILD_IN = $(DOC_BUILD_DIR)
-SPHINX_BUILD_OUT = $(DOC_BUILD_DIR)/sphinx
+SPHINX_QUIET	= #-Q
+SPHINX_BUILD_IN = $(DOC_BUILD_DIR)/sphinx
+SPHINX_BUILD_OUT = $(SPHINX_BUILD_IN)
 
+# Breathe extension
+BREATHE_APIDOC  = breathe-apidoc
+BREATHE_IN      = $(DOC_BUILD_DIR)/doxygen/xml
+BREATHE_OUT     = $(SPHINX_BUILD_OUT)/breathe
+BREATHE_OPTION  = -g union,namespace,class,group,struct,file,interface
+
+all:
+	make html
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -32,7 +42,7 @@ help:
 	mkdir -p $(BREATHE_OUT)
 
 	# Generate the doxygen (xml) symbols
-	$(DOXYGEN) doc_config_files/doxygen/Doxyfile.in
+	$(DOXYGEN) doc_config_files/doxygen/Doxyfile
 
 	# Generate the .rst from the Dpxygen (xml) symbols
 	# cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
@@ -41,10 +51,13 @@ help:
 	$(BREATHE_APIDOC) -o $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION) 
 
 	# Generate the python API .rst files
-	$(SPHINX_APIDOC) -o $(DOC_BUILD_DIR) python/sphinx_tuto
+	$(SPHINX_APIDOC) -o $(SPHINX_BUILD_OUT) python/sphinx_tuto
 	
 	# Copy the config files
 	cp -r doc_config_files/sphinx/* $(DOC_BUILD_DIR)/sphinx
 
+	#copy the markdown doc files
+	cd $(DOC_BUILD_DIR)/sphinx && ln -sf ../../../doc && cd -
+
 	# Generate the final layout.
-	@$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O)
+	@$(SPHINX_BUILD) -M $@ "$(SPHINX_BUILD_IN)" "$(SPHINX_BUILD_OUT)" $(SPHINXOPTS) $(O) $(SPHINX_QUIET)
