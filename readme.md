@@ -41,6 +41,28 @@ In order to build the documentation we need to setup the following tools:
     the Python api documentation parser,
 - [Sphinx](http://www.sphinx-doc.org/en/master/) the documentation renderer,
 
+## Setup with the Makefile
+
+### Doxygen
+
+In order to execute to generate the C++ API documentation we use the
+doxygen tool.
+We wrote a `Doxyfile` located in `doc_config_files/doxygen/` in this
+repository.
+It is used to paramterize Doxyygen to notably do:
+
+- output the files in the `_build/docs/doxygen` folder,
+- generate a list of xml files containing the API documentation,
+- 
+- 
+
+### Breathe
+### recommonmark
+### sphinx-apidoc
+### Sphinx
+
+
+
 ### Setup Doxygen
 
 #### With CMake

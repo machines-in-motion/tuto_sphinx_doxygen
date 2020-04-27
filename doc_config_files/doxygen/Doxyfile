@@ -9,7 +9,7 @@ OUTPUT_DIRECTORY       = _build/docs/doxygen
 
 # Program listing vastly increases the size of XML so it's recommended
 # to turning it OFF:
-XML_PROGRAMLISTING = NO
+XML_PROGRAMLISTING = YES
 
 # The next one is essential! Sphinx uses lowercase reference IDs,
 # so Doxygen can't use mixed-case IDs:
