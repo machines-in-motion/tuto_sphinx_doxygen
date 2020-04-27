@@ -1,4 +1,6 @@
-# Minimal makefile for Sphinx documentation
+#
+# Minimal makefile for Sphinx documentation based on
+# doxygen + breath-apidoc + sphinx-apidoc + sphinx-build
 #
 
 # You can set these variables from the command line.
@@ -6,9 +8,6 @@ DOC_BUILD_DIR        = _build/docs
 
 # Doxygen
 DOXYGEN         = doxygen
-
-# Doxyrest
-# DOXYREST        = doxyrest
 
 # Sphinx
 SPHINXOPTS      =
@@ -43,9 +42,6 @@ help:
 
 	# Generate the doxygen (xml) symbols
 	$(DOXYGEN) doc_config_files/doxygen/Doxyfile
-
-	# Generate the .rst from the Dpxygen (xml) symbols
-	# cd $(SOURCEDIR) ; doxyrest doxyoutput/xml/index.xml -o doxyrest_out/index.rst --frame=index_main.rst.in --frame-dir=/home/mnaveau/Software/install/share/cfamily --frame-dir=/home/mnaveau/Software/install/share/common ; cd -
 
 	# Generate the .rst files from the doxygen xml output
 	$(BREATHE_APIDOC) -o $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION) 

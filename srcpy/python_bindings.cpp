@@ -1,8 +1,8 @@
 #include <pybind11/pybind11.h>
-#include "ci_example_cpp/pid.hpp"
+#include "sphinx_tuto/pid.hpp"
 
 
-using namespace ci_example_cpp;
+namespace sphinx_tuto{
 
 PYBIND11_MODULE(basic_pid,m) {
 
@@ -12,3 +12,5 @@ PYBIND11_MODULE(basic_pid,m) {
     .def("reset_integral",&PID::reset_integral);
 
 }
+
+} // namespace sphinx_tuto

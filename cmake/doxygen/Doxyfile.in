@@ -27,7 +27,7 @@ EXTRACT_ALL            = YES
 EXTRACT_PRIVATE        = YES
 EXTRACT_STATIC         = YES
 
-EXAMPLE_PATH           = demos
+EXAMPLE_PATH           = @PROJECT_SOURCE_DIR@/demos
 INPUT                  = @PROJECT_SOURCE_DIR@
 IMAGE_PATH             = @PROJECT_SOURCE_DIR@
 FILE_PATTERNS          = *.h *.hpp *.hh *.cpp *.c *.cc *.hxx
