@@ -15,11 +15,6 @@ cmake_minimum_required(VERSION 3.5.1)
 
 project(sphinx_tuto)
 
-###########################
-# depend on catkin macros #
-###########################
-find_package(catkin REQUIRED)
-
 #################
 # Doxygen Macro #
 #################
@@ -37,54 +32,33 @@ macro(build_doxygen_documentation)
     endif()
 
     # set the destination folder to be devel/share/[project_name]/doc/
-    set(doc_build_folder ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION})
-    set(doc_install_folder ${CMAKE_INSTALL_PREFIX}/${CATKIN_PACKAGE_SHARE_DESTINATION})
-
-    
+    set(DOXYGEN_DOXYFILE_IN ${PROJECT_SOURCE_DIR}/cmake/Doxyfile.in)
+    set(DOXYGEN_DOXYFILE ${PROJECT_BINARY_DIR}/docs/doxygen/Doxyfile)
+    set(DOXYGEN_OUTPUT ${PROJECT_BINARY_DIR}/docs/doxygen)
 
     # Create the doxyfile in function of the current project.
     # If the Doxyfile.in does not exists, the cmake step stops.
-    configure_file(${PROJECT_SOURCE_DIR}/doc_config_files/Doxyfile.in
-                    ${doc_build_folder}/Doxyfile
-                    @ONLY IMMEDIATE)
+    configure_file(${DOXYGEN_DOXYFILE_IN} ${DOXYGEN_DOXYFILE} @ONLY IMMEDIATE)
 
     # the doxygen target is generated
     add_custom_target (${PROJECT_NAME}_doc ALL
-        COMMAND ${DOXYGEN_EXECUTABLE} ${doc_build_folder}/Doxyfile
-        SOURCES ${doc_build_folder}/Doxyfile
-        WORKING_DIRECTORY ${doc_build_folder})
-
-    # install the documentation
-    install(DIRECTORY ${doc_build_folder}/doc DESTINATION ${doc_install_folder})
-    install(FILES ${doc_build_folder}/${PROJECT_NAME}.tag DESTINATION ${doc_install_folder})
+        COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_DOXYFILE}
+        SOURCES ${DOXYGEN_DOXYFILE} # if the file change rebuild
+        WORKING_DIRECTORY ${DOXYGEN_OUTPUT})
 
 endmacro(build_doxygen_documentation)
-
-
-##############################
-# manage python file install #
-##############################
-catkin_python_setup()
-
-##########################################
-# export the package as a catkin package #
-##########################################
-catkin_package(
-  CFG_EXTRAS
-    ${MPI_CMAKE_MODULES_RESOURCES_DIR}/package_paths.cmake
-    ${cmake_files}
-)
-
-##########################################
-# Install the interesting resource files #
-##########################################
-configure_file(
-    ${MPI_CMAKE_MODULES_RESOURCES_DIR}/_clang-format
-    ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION}/_clang-format
-    @ONLY IMMEDIATE
-)
 
 ##########################
 # building documentation #
 ##########################
+
+# First we need to build the doxygen xml files.
 build_doxygen_documentation()
+
+
+
+
+
+   # # install the documentation
+    # install(DIRECTORY ${doc_build_folder}/doc DESTINATION ${doc_install_folder})
+    # install(FILES ${doc_build_folder}/${PROJECT_NAME}.tag DESTINATION ${doc_install_folder})

@@ -20,7 +20,7 @@ to this package:
     cd _build
     cmake ..
     make
-    firefox devel/share/docs/sphinx/html/index.html
+    firefox _build/docs/sphinx/html/index.html
 
 ### Using Makefile
 
