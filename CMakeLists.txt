@@ -13,7 +13,7 @@
 ######################
 cmake_minimum_required(VERSION 3.5.1)
 
-project(sphinx_tuto)
+project(tuto_sphinx_doxygen)
 
 #################
 # Doxygen Macro #

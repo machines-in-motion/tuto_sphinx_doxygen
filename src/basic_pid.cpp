@@ -6,7 +6,7 @@
  * @date 2019-05-22
  */
 
-#include "sphinx_tuto/basic_pid.hpp" // where DEFAULT_KP,KD and KI are declared
+#include "tuto_sphinx_doxygen/basic_pid.hpp" // where DEFAULT_KP,KD and KI are declared
 
 
 // you may notice that there is no doxygen friendly documentation here.
@@ -18,5 +18,5 @@
 // In any case the internal variable must be followed by a trailing underscore
 
 
-namespace sphinx_tuto {
+namespace tuto_sphinx_doxygen {
 }

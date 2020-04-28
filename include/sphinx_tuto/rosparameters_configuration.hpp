@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sphinx_tuto/gains_configuration.hpp"
+#include "tuto_sphinx_doxygen/gains_configuration.hpp"
 #include "ros/ros.h"
 #include "ros/master.h"
 
@@ -11,7 +11,7 @@
 
 
 
-namespace sphinx_tuto {
+namespace tuto_sphinx_doxygen {
 
 
   /*! @brief Read gains configuration from the ros parameter server. */

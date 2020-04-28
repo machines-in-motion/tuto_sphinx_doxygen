@@ -84,7 +84,7 @@ EXTRA_PAGE_LIST = {}
 --!
 
 --! CMAKE
-INDEX_TITLE = "sphinx_tuto Documentation"
+INDEX_TITLE = "tuto_sphinx_doxygen Documentation"
 
 --!
 --! File with project introduction (reStructuredText). When non-nil, this file

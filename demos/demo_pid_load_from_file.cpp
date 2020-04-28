@@ -9,8 +9,8 @@
  * @see https://git-amd.tuebingen.mpg.de/amd-clmc/ci_example/wikis/catkin:-how-to-implement-a-demo
  */
 
-#include "sphinx_tuto/pid.hpp"
-#include "sphinx_tuto/file_configuration.hpp" 
+#include "tuto_sphinx_doxygen/pid.hpp"
+#include "tuto_sphinx_doxygen/file_configuration.hpp" 
 #include <stdexcept>
 
 /**
@@ -33,11 +33,11 @@ void run_demo_load_from_file(){
 
   // Gains_configuration is the base class for all configuration, including
   // the one read from yaml file, as done here. 
-  sphinx_tuto::File_configuration gains = sphinx_tuto::File_configuration(config_file_path);
+  tuto_sphinx_doxygen::File_configuration gains = tuto_sphinx_doxygen::File_configuration(config_file_path);
 
   // printing to standard output the gains
   std::cout << "gains read from configuration file:" << std::endl;
-  sphinx_tuto::print_configuration(gains);
+  tuto_sphinx_doxygen::print_configuration(gains);
 
   // checking reading the config file when fine
   // if not, throwing corresponding error
@@ -48,7 +48,7 @@ void run_demo_load_from_file(){
   /* creating and running the controller */
 
   // PID controller creation
-  sphinx_tuto::PID controller(gains);
+  tuto_sphinx_doxygen::PID controller(gains);
   
   // example of force computation
   double current_position=1;

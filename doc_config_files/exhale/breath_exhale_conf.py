@@ -20,7 +20,7 @@ import textwrap
 
 # -- Project information -----------------------------------------------------
 
-project = u'sphinx_tuto'
+project = u'tuto_sphinx_doxygen'
 copyright = u'2019, Maximilien Naveau'
 author = u'Maximilien Naveau'
 
@@ -123,7 +123,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sphinx_tutodoc'
+htmlhelp_basename = 'tuto_sphinx_doxygendoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -150,7 +150,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx_tuto.tex', u'sphinx\\_tuto Documentation',
+    (master_doc, 'tuto_sphinx_doxygen.tex', u'sphinx\\_tuto Documentation',
      u'Maximilien Naveau', 'manual'),
 ]
 
@@ -160,7 +160,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx_tuto', u'sphinx_tuto Documentation',
+    (master_doc, 'tuto_sphinx_doxygen', u'tuto_sphinx_doxygen Documentation',
      [author], 1)
 ]
 
@@ -171,8 +171,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx_tuto', u'sphinx_tuto C++',
-     author, 'sphinx_tuto', 'One line description of project.',
+    (master_doc, 'tuto_sphinx_doxygen', u'tuto_sphinx_doxygen C++',
+     author, 'tuto_sphinx_doxygen', 'One line description of project.',
      'Robotics'),
 ]
 

@@ -1,7 +1,7 @@
 Readme
 ======
 
-## 1. sphinx_tuto
+## 1. tuto_sphinx_doxygen
 
 Small project to see how to build the documentation of an hybrid project
 C++/python/markdown

@@ -2,7 +2,7 @@
 # Doxyfile for the Makefile
 # 
 
-PROJECT_NAME           = "sphinx_tuto"
+PROJECT_NAME           = "tuto_sphinx_doxygen"
 
 # Next, choose the location of the resulting XML database:
 OUTPUT_DIRECTORY       = _build/docs/doxygen
@@ -36,7 +36,7 @@ EXCLUDE_PATTERNS      += */*build*/*
 EXCLUDE_PATTERNS      += */tests/*
 RECURSIVE              = YES
 GENERATE_LATEX         = No
-GENERATE_TAGFILE       = build/docs/doxygen/sphinx_tuto.tag
+GENERATE_TAGFILE       = build/docs/doxygen/tuto_sphinx_doxygen.tag
 GENERATE_TREEVIEW = YES
 GENERATE_HTML = No
 GENERATE_XML = YES

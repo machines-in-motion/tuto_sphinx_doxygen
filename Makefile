@@ -47,7 +47,7 @@ help:
 	$(BREATHE_APIDOC) -o $(BREATHE_OUT) $(BREATHE_IN) $(BREATHE_OPTION) 
 
 	# Generate the python API .rst files
-	$(SPHINX_APIDOC) -o $(SPHINX_BUILD_OUT) python/sphinx_tuto
+	$(SPHINX_APIDOC) -o $(SPHINX_BUILD_OUT) python/tuto_sphinx_doxygen
 	
 	# Copy the config files
 	cp -r doc_config_files/sphinx/* $(DOC_BUILD_DIR)/sphinx

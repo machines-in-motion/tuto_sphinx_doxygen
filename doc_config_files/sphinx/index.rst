@@ -1,4 +1,4 @@
-Welcome to sphinx_tuto's documentation!
+Welcome to tuto_sphinx_doxygen's documentation!
 =======================================
 
 .. toctree::

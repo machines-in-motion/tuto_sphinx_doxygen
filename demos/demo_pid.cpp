@@ -9,7 +9,7 @@
  * @see https://git-amd.tuebingen.mpg.de/amd-clmc/ci_example/wikis/catkin:-how-to-implement-a-demo
  */
 
-#include "sphinx_tuto/pid.hpp" 
+#include "tuto_sphinx_doxygen/pid.hpp" 
 
 /**
  * @brief Creates a PID controller and use the API in a small demo.
@@ -17,7 +17,7 @@
 void run_demo_pid(){
 
   // PID controller with default gains values
-  sphinx_tuto::PID& controller = sphinx_tuto::get_default_pid();
+  tuto_sphinx_doxygen::PID& controller = tuto_sphinx_doxygen::get_default_pid();
   
   // example of force computation
   double current_position=1;

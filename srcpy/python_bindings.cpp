@@ -1,8 +1,8 @@
 #include <pybind11/pybind11.h>
-#include "sphinx_tuto/pid.hpp"
+#include "tuto_sphinx_doxygen/pid.hpp"
 
 
-namespace sphinx_tuto{
+namespace tuto_sphinx_doxygen{
 
 PYBIND11_MODULE(basic_pid,m) {
 
@@ -13,4 +13,4 @@ PYBIND11_MODULE(basic_pid,m) {
 
 }
 
-} // namespace sphinx_tuto
+} // namespace tuto_sphinx_doxygen

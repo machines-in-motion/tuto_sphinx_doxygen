@@ -1,10 +1,10 @@
 #pragma once
 
-#include "sphinx_tuto/default_configuration.hpp"
+#include "tuto_sphinx_doxygen/default_configuration.hpp"
 #include <memory>
 #include <vector>
 
-namespace sphinx_tuto {
+namespace tuto_sphinx_doxygen {
 
 
   /*! @brief Simple 1D pid controller. */

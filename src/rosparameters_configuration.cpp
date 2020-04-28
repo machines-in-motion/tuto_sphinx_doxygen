@@ -1,7 +1,7 @@
-#include "sphinx_tuto/rosparameters_configuration.hpp"
+#include "tuto_sphinx_doxygen/rosparameters_configuration.hpp"
 
 
-namespace sphinx_tuto {
+namespace tuto_sphinx_doxygen {
 
   static bool get_parameter(const ros::NodeHandle &nh, const std::string &parameter, double &get_value){
     ros::Rate wait(10);

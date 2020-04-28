@@ -3,7 +3,7 @@
 #include <string>
 #include <iostream>
 
-namespace sphinx_tuto {
+namespace tuto_sphinx_doxygen {
 
   /** @brief Abstract class defining for the PID configuration.
    * 

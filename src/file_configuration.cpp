@@ -1,7 +1,7 @@
-#include "sphinx_tuto/file_configuration.hpp"
+#include "tuto_sphinx_doxygen/file_configuration.hpp"
 
 
-namespace sphinx_tuto {
+namespace tuto_sphinx_doxygen {
 
   File_configuration::File_configuration(std::string yaml_file){
 
